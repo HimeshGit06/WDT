@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+<div class="payment-container">
+    <h1>Complete Your Payment</h1>
+    <form id="payment-form">
+        <label for="cardholder-name">Cardholder Name</label>
+        <input type="text" id="cardholder-name" name="cardholder-name" required>
+        <label for="card-number">Enter 16-Digit Number:</label>
+    <input type="number" id="card-number" maxlength="16" placeholder="Enter 16-digit number" required>
+    <p id="error-message1" style="color:red; display:none;">Please enter exactly 16 digits.</p>
+        <input type="number" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+        <p id="error-message2" style="color:red; display:none;">Please enter Valid expiry date in MMYY format.</p>
+        <label for="cvv">CVV</label>
+        <input type="number" id="cvv" name="cvv" required>
+        <p id="error-message3" style="color:red; display:none;">Please enter a Valid CVV</p>
+        <button type="submit" id="submit-btn"><a href="order  successful.html">Pay and Place</a></button>
+    </form>
+    <div id="payment-status"></div>
+</div>
+<script src="pay.js"></script>
+</body>
+</html>

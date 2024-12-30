@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse and add products to your shopping cart.">
+    <meta name="author" content="Your Company Name">
+    <title>Shop | AAbhushan.com</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .products-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 22%;
+            margin: 10px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product-card h3 {
+            color: #333;
+            margin: 10px 0;
+        }
+        .product-card p {
+            font-size: 1.1em;
+            color: #777;
+        }
+        .product-card .price {
+            font-size: 1.4em;
+            color: #333;
+            margin: 10px 0;
+        }
+        .add-to-cart-btn {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #555;
+        }
+        .cart-section {
+            margin-top: 30px;
+        }
+        .cart-item img {
+            max-width: 80px;
+            border-radius: 5px;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item .item-details {
+            display: flex;
+            align-items: center;
+        }
+        .cart-item .item-details span {
+            margin-left: 10px;
+        }
+        .cart-item input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            margin: 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .remove-btn {
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .remove-btn:hover {
+            background-color: #ff0000;
+        }
+        .total-summary {
+            margin-top: 30px;
+            text-align: right;
+        }
+        .total-summary .total {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .cta-button {
+            background-color: #333;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shop Our Products</h1>
+        <p>Browse and add products to your shopping cart</p>
+    </header>
+
+    <div class="container">
+        <h2>Our Products</h2>
+
+        <!-- Product Listings -->
+        <div class="products-list">
+            <div class="product-card" data-id="1">
+                <img src="https://yellowchimes.com/cdn/shop/products/71xFZd3J1vL_d6599392-b99c-416c-a504-7f8574efe3cb.jpg?v=1725046601&width=713" alt="Product 1">
+                <h3>Rose Gold Necklace Set</h3>
+                <p>Short description of the product.</p>
+                <div class="price">$49.99</div>
+                <button class="add-to-cart-btn" onclick="addToCart(1, 'Rose Gold Necklace Set', 49.99)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="2">
+                <img src="https://rankajewellers.in/cdn/shop/products/BRA6152_1.webp?v=1680241310" alt="Product 2">
+                <h3>Morden Gold Bracelet</h3>
+                <p>Short description of the product.</p>
+                <div class="price">$29.99</div>
+                <button class="add-to-cart-btn" onclick="addToCart(2, 'Morden Gold Bracelet', 29.99)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="3">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/ring/n/v/o/adjustable-skfr1518g-ring-sk-fashion-jewellery-original-imagjnvzfx2dg4mx.jpeg?q=20&crop=false" alt="Product 3">
+                <h3>Gold Plated Ring</h3>
+                <p>Short description of the product.</p>
+                <div class="price">$69.99</div>
+                <button class="add-to-cart-btn" onclick="addToCart(3, 'Gold Plated Ring', 69.99)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="4">
+                <img src="https://www.kgkgroup.com/wp-content/uploads/2023/08/Understand-The-Evolution-Of-Diamond-Jewellery-Through-Time_1643x405.jpg" alt="Product 4">
+                <h3>Diamond Necklace</h3>
+                <p>Short description of the product.</p>
+                <div class="price">$99.99</div>
+                <button class="add-to-cart-btn" onclick="addToCart(4, 'Diamond Necklace', 99.99)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-id="4">
+                <img src="https://www.kennedy.com.au/app/uploads/2024/05/Jewellery-Desktop-1-1200x900.png" alt="Product 4">
+                <h3>Austrialian Pendent</h3>
+                <p>Short description of the product.</p>
+                <div class="price">$99.99</div>
+                <button class="add-to-cart-btn" onclick="addToCart(5, 'Austrialian Pendent', 89.99)">Add to Cart</button>
+            </div>
+            
+            <div class="product-card" data-id="4">
+                <img src="https://www.voguejewellers.lk/wp-content/uploads/2024/09/Vogue-Jewellers-Neckles-500x668-1.jpg" alt="Product 4">
+                <h3>Necklace</h3>
+                <p>Short description of the product.</p>
+                <div class="price">$99.99</div>
+                <button class="add-to-cart-btn" onclick="addToCart(6, 'Necklace', 59.99)">Add to Cart</button>
+            </div>
+            
+            <div class="product-card" data-id="4">
+                <img src="https://cdn.shopclues.com/images1/thumbnails/116573/320/320/153156366-116573408-1661542341.jpg" alt="Product 4">
+                <h3>gold plated ring bracelet</h3>
+                <p>Short description of the product.</p>
+                <div class="price">$99.99</div>
+                <button class="add-to-cart-btn" onclick="addToCart(7, 'gold plated ring bracelet', 49.99)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Cart Section -->
+        <div class="cart-section">
+            <h2>Your Cart</h2>
+            <div id="cart-items-container"></div>
+
+            <!-- Cart Total Summary -->
+            <div class="total-summary">
+                <p><strong>Total:</strong> <span id="total-price">$0.00</span></p>
+                <a href="login.html" class="cta-button">Login And Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AAbhushan.com. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        // Function to add items to the cart
+        function addToCart(id, name, price) {
+            // Check if the item is already in the cart
+            let itemIndex = cart.findIndex(item => item.id === id);
+            if (itemIndex === -1) {
+                cart.push({ id, name, price, quantity: 1 });
+            } else {
+                cart[itemIndex].quantity++;
+            }
+            updateCart();
+        }
+
+        // Function to remove an item from the cart
+        function removeItem(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCart();
+        }
+
+        // Function to update the cart display and total
+        function updateCart() {
+            const cartContainer = document.getElementById('cart-items-container');
+            const totalPriceElement = document.getElementById('total-price');
+            cartContainer.innerHTML = '';
+
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <div class="item-details">
+                        <img src="https://via.placeholder.com" alt="${item.name}">
+                        <span>${item.name}</span>
+                    </div>
+                    <span>$${item.price.toFixed(2)}</span>
+                    <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${item.id}, this.value)">
+                    <span>$${itemTotal.toFixed(2)}</span>
+                    <button class="remove-btn" onclick="removeItem(${item.id})">Remove</button>
+                `;
+
+                cartContainer.appendChild(cartItem);
+            });
+
+            totalPriceElement.textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Function to update the quantity of an item
+        function updateQuantity(id, quantity) {
+            const itemIndex = cart.findIndex(item => item.id === id);
+            if (itemIndex !== -1) {
+                cart[itemIndex].quantity = parseInt(quantity);
+                updateCart();
+            }
+        }
+    </script>
+</body>
+</html>

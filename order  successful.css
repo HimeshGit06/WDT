@@ -1,0 +1,28 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set body background and font */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #B76E79;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+button{
+    height:5vh ;
+    background-color: coral;
+    color: #00ff00;
+}
+
+/* Container for the confirmation page */
+.confirmation-container {
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    borde

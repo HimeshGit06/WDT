@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit your address details securely.">
+    <meta name="author" content="AAbhushan.com">
+    <title>Submit Your Address |AAbhushan.com</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-size: 1.1em;
+            color: #333;
+        }
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100%;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Submit Your Address</h1>
+        <p>Please provide your address details below.</p>
+    </header>
+
+    <div class="container">
+        <h2>Address Form</h2>
+        <form id="address-form" method="get">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+            <label for="street">Street Address:</label>
+            <input type="text" id="street" name="street" placeholder="Your street address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="City" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" placeholder="State" required>
+
+            <label for="zipcode">Zip Code:</label>
+            <input type="text" id="zipcode" name="zipcode" placeholder="Zip Code" required pattern="\d{5}" title="Enter a valid 5-digit zip code">
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" placeholder="Country" required>
+
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Any additional notes (optional)"></textarea>
+
+            <button type="submit"><a href="pay.html">Proceed to pay</a></button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; AAbhushan.com. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('address-form').addEventListener('submit', function(event) {
+            // Check for empty fields or invalid input (simple example)
+            const zipCode = document.getElementById('zipcode').value;
+            if (!zipCode.match(/^\d{5}$/)) {
+                alert('Please enter a valid 5-digit zip code.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
